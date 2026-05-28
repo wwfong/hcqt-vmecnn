@@ -1,0 +1,9 @@
+# Minimal dependencies for the CI smoke tests.
+# These are modern (Python 3.10+) packages used only by tests/test_smoke.py.
+# The full legacy stack is in requirements-legacy.txt.
+
+pytest
+numpy
+scipy
+librosa
+soundfile
