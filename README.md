@@ -1,5 +1,8 @@
 # Violin Melody Extraction with Multi-Task CNNs on HCQTs
 
+[![smoke](https://github.com/wwfong/hcqt-vmecnn/actions/workflows/smoke.yml/badge.svg)](https://github.com/wwfong/hcqt-vmecnn/actions/workflows/smoke.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 > Deep multi-task convolutional neural networks operating on Harmonic Constant-Q Transform (HCQT) representations, with Hidden Markov Model post-processing for temporal smoothing, applied to violin melody extraction from polyphonic music signals.
 
 **Authors:** David W. Fong, Patrick A. Naylor (Imperial College London)

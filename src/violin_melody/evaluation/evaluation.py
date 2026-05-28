@@ -2,11 +2,11 @@
 from mir_eval import melody
 import essentia
 import essentia.standard as essentiaMelody
-import predict_on_audio as dsm
-import preprocessing
-import postprocessing
-import predicting
-import training
+from violin_melody.inference import predict_on_audio as dsm
+from violin_melody.data import preprocessing
+from violin_melody.postprocessing import postprocessing
+from violin_melody.inference import predicting
+from violin_melody.training import training
 import numpy as np
 #-----------------------------------------------------------------------------------
 #FUNCTIONS

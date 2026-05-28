@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 import itertools
-import preprocessing
+from violin_melody.data import preprocessing
 from sklearn import model_selection
 from keras.models import Model
 from keras.utils import np_utils, plot_model

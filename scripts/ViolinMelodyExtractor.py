@@ -1,8 +1,16 @@
 #Preliminary Step: import relevant modules
-import preprocessing
-import training
-import postprocessing
-import predicting
+import os
+import sys
+
+# Add the repo's src/ directory to the import path so the package is found
+# whether you run this script from the repo root or via an installed entry point.
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(_REPO_ROOT, "src"))
+
+from violin_melody.data import preprocessing
+from violin_melody.training import training
+from violin_melody.postprocessing import postprocessing
+from violin_melody.inference import predicting
 
 #Step 1: specify path of violin melody extractor
 path = raw_input("Insert path of violin melody extractor\n")

@@ -1,7 +1,7 @@
 #IMPORT RELEVANT MODULES
 import pandas as pd
 import numpy as np
-import preprocessing
+from violin_melody.data import preprocessing
 from midiutil import MIDIFile
 #-------------------------------------------------------------------------------------------------------
 #FUNCTIONS

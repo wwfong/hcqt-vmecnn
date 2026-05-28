@@ -1,6 +1,6 @@
 #IMPORT RELEVANT MODULES
 import numpy as np
-import preprocessing
+from violin_melody.data import preprocessing
 #----------------------------------------------------------------------------------
 #FUNCTIONS
 
