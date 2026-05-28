@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+title: "Multi-task Convolutional Neural Networks for Violin Melody Extraction from Polyphonic Music Signals"
+authors:
+  - family-names: Fong
+    given-names: David W.
+    affiliation: Imperial College London
+  - family-names: Naylor
+    given-names: Patrick A.
+    affiliation: Imperial College London
+date-released: 2019-04-01
+url: "https://github.com/wwfong/hcqt-vmecnn"
+preferred-citation:
+  type: unpublished
+  title: "Multi-task Convolutional Neural Networks for Violin Melody Extraction from Polyphonic Music Signals"
+  authors:
+    - family-names: Fong
+      given-names: David W.
+    - family-names: Naylor
+      given-names: Patrick A.
+  year: 2019
+  notes: "Submitted to the 20th International Society for Music Information Retrieval Conference (ISMIR)"

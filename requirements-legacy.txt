@@ -1,0 +1,15 @@
+# Original (2018) dependencies for reproducing the thesis exactly.
+# Python 2.7. Pinned to the versions in the original repo's README.
+#
+# For new work, prefer requirements.txt (Python 3 / PyTorch) when added.
+
+essentia==2.1b4
+keras==2.1.5
+librosa==0.6.0
+matplotlib==2.1.2
+MIDIUtil==1.2.1
+mir_eval==0.4
+numpy==1.14.0
+tensorflow==1.4.0
+scipy==1.0.0
+hmmlearn==0.2.0

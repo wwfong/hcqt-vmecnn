@@ -1,0 +1,74 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+logs/
+runs/
+wandb/
+mlruns/
+
+# Data (datasets are large and licensed; see data/README.md for sourcing)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/raw/README.md
+!data/processed/README.md
+
+# Trained model weights (~600MB total in original repo; see scripts/download_weights.sh)
+weights/
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Training labels (~25MB)
+f0TrainingLabels.npy
+*.npy
+
+# Outputs that don't belong in git
+results/checkpoints/
+results/runs/
+
+# Local config overrides
+configs/local/

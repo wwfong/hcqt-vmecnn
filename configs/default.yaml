@@ -1,0 +1,52 @@
+# Default configuration for HCQT-VMECNN.
+# Mirrors the hyperparameters used in the ISMIR 2019 submission.
+
+experiment:
+  name: mtmecnn_default
+  seed: 42
+
+data:
+  dataset: medleydb            # one of {medleydb, bach10, mir1k}
+  raw_dir: data/raw
+  processed_dir: data/processed
+  sample_rate: 22050
+  hop_length: 256
+  patch_size: 50               # frames per training patch
+  batch_size: 16
+
+features:
+  representation: hcqt
+  n_bins: 360                  # 6 octaves x 60 bins/octave
+  bins_per_octave: 60
+  n_harmonics: 6
+  fmin: 32.7                   # C1
+
+model:
+  architecture: mtmecnn        # one of {monomecnn, polymecnn, mtmecnn}
+  task_heads:
+    - f0_violin
+    - f0_melody
+    - voicing
+  filters: [16, 32, 64, 128]
+  kernel_size: [5, 5]
+  dropout: 0.25
+
+training:
+  optimizer: adam
+  learning_rate: 1.0e-3
+  epochs: 50
+  early_stopping_patience: 5
+
+postprocessing:
+  hmm:
+    n_states: 60               # discretised pitch states for the HMM
+    self_transition_prob: 0.9
+    smoothing_window: 11
+
+evaluation:
+  metrics:
+    - raw_pitch_accuracy
+    - raw_chroma_accuracy
+    - voicing_recall
+    - voicing_false_alarm
+    - overall_accuracy
