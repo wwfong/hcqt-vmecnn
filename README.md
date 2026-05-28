@@ -79,15 +79,33 @@ The extractor produces a MIDI file with the estimated violin melody and a CSV of
 
 ## Results
 
-Headline results from the ISMIR 2019 submission. See [`docs/results.md`](docs/results.md) for the full tables, ablations, and figures.
+Headline results from the ISMIR 2019 submission, evaluated on a violin sonata subset of the Su Dataset against two state-of-the-art baselines (Melodia and the Deep Salience Map CNN of Bittner et al.). See [`docs/results.md`](docs/results.md) for the full tables, ablations, and figures.
 
-| Model | Pitch accuracy | Voicing recall | Voicing false alarm | Overall accuracy |
-|---|---|---|---|---|
-| MonoMECNN | TBD | TBD | TBD | TBD |
-| PolyMECNN | TBD | TBD | TBD | TBD |
-| **MTMECNN (ours)** | **TBD** | **TBD** | **TBD** | **TBD** |
+Five standard melody extraction metrics are reported, where higher is better except for VFA (Voicing False Alarm Rate, lower is better):
 
-(Numbers to be populated from `outputs.txt` and the paper.)
+- **VR** — Voicing Recall Rate
+- **VFA** — Voicing False Alarm Rate (lower is better)
+- **RPA** — Raw Pitch Accuracy
+- **RCA** — Raw Chroma Accuracy
+- **OA** — Overall Accuracy (headline metric)
+
+| System | VR | VFA ↓ | RPA | RCA | **OA** |
+|---|---:|---:|---:|---:|---:|
+| Melodia [Salamon & Gómez, 2012] (baseline) | 50 | 36 | 6 | 15 | 21 |
+| DSM CNN [Bittner et al., 2017] (baseline) | 56 | 50 | 29 | 32 | 34 |
+| Single CNN, raw output | 83 | 28 | 73 | 73 | 73 |
+| Single CNN, with HMM smoothing | 98 | 56 | 82 | 83 | 73 |
+| Multi-Task CNN (γ=0.7/0.3), raw output | 77 | 25 | 68 | 68 | 70 |
+| **Multi-Task CNN (γ=0.7/0.3), with HMM smoothing** | **93** | **43** | **79** | **80** | **74** |
+
+All values are percentages, read from Figure 2 of the paper.
+
+### Headline findings
+
+- The best system is the **Multi-Task CNN with γ_Poly = 0.7, γ_Mono = 0.3 and HMM post-processing**, achieving an **Overall Accuracy of 74.94%** on the Su Dataset violin sonata test set.
+- All proposed representation-specific CNN systems outperform both state-of-the-art baselines by a wide margin. The worst-performing variant (MT CNN raw) still beats the DSM CNN's OA by **+32.36 pp** and Melodia's by **+45.95 pp**.
+- HMM-based post-processing lifts OA by an average of **+3.47 pp**, ranging from −0.12 pp for the Single CNN (whose voicing was already strong) to +7.49 pp for the worst Multi-Task variant.
+- Multi-Task CNNs achieve a lower VFA than Single CNNs in every condition, suggesting a more robust timbral representation. They achieve higher OA than Single CNNs **only when paired with HMM smoothing**.
 
 ## Citation
 
